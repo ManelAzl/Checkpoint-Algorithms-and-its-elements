@@ -1,0 +1,37 @@
+Algo_Checkpoint
+VAR
+length : INTEGER :=0;
+Words : INTEGER :=1;
+Vowels : INTEGER :=0;
+Sentence : string ;
+n : CHAR;
+i, j : INTEGER;
+T : ARRAY_OF CHAR[ 1 .. 6] := ('a', 'e', 'i', 'o', 'u', 'y');
+
+BEGIN
+
+Write("Please enter a sentence: ");
+Read(Sentence);
+
+FOR (i := 1 TO Length(Sentence)-1) DO
+    n := Sentence[i];
+  WHILE (n <> ".") DO
+        length := length + 1;
+        IF (n=" ") THEN
+        Words := Words + 1;
+        END_IF
+
+        FOR (j := 1 TO Length(T)) DO
+            IF (lowercase (n) = T[j]) THEN
+                Vowels := Vowels + 1;
+            END_IF
+        END_FOR
+
+    END_WHILE
+END_FOR
+
+Write("The length of the sentence is: ", length, "\n");
+Write("The number of words in the sentence is: ", Words, "\n"); 
+Write("The number of vowels in the sentence is: ", Vowels, "\n");
+
+END;
